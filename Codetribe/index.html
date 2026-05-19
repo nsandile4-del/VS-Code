@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- 1. Load Font Awesome Icons via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Basic reset and typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo img {
+            max-height: 50px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Hero Section (Video/Image) */
+        .hero {
+            width: 100%;
+            height: 400px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .hero video, .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 5%;
+            gap: 40px;
+        }
+
+        .bio-section {
+            flex: 1;
+        }
+
+        .bio-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .bio-section p {
+            margin-bottom: 15px;
+        }
+
+        .profile-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%; /* Makes the image circle */
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+
+        /* Footer Section */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 5%;
+            background-color: #fafafa;
+            border-top: 1px solid #ccc;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-left, .footer-middle, .footer-right {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .social-container {
+            display: flex;
+            gap: 20px;
+            justify-content: left;
+            margin-top: 20px; /* Reduced to look cleaner */
+        }
+
+        /* Base styling for the icon links */
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px; /* Slightly scaled down to fit standard layouts better */
+            height: 45px;
+            border-radius: 50%; /* Makes it a circle */
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+         /* Brand Colors */
+        .instagram { background-color: #E1306C; }
+        .x-twitter  { background-color: #000000; }
+
+        .map-container iframe {
+            width: 100%;
+            height: 180px; /* Slightly taller for better visibility */
+            border: 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="My Logo"> 
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About me</a>
+            <a href="contacts.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <video autoplay loop muted playsinline>
+            <source src="vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <main id="about" class="main-container">
+        <div class="bio-section">
+            <h1>Sandile Marvin James</h1> 
+            
+            <p> Welcome to my portfolio! I am an aspiring software developer training with CodeTribe. I specialize in building responsive, user-friendly web applications.</p>
+            <p>Driven by curiosity and a passion for clean code, I love solving complex logical problems and translating designs into fully functional digital experiences.</p>
+        </div>
+
+        <div class="profile-image-container">
+            <img src="Photos/profile.jpg" alt="Your Name Profile Picture" class="profile-pic">
+        </div>
+    </main>
+
+    <footer id="contact">
+        <!-- Left Side: Contact details & Socials -->
+        <div class="footer-left">
+            <p><strong>Address Here:</strong></p>
+            <p>933 Locus Meyer,Akasia, Pretoria, 0001</p>
+            <p>Phone: +27 670 009 0360</p>
+            
+            <div class="social-container">
+                <!-- Instagram -->
+                <a href="https://instagram.com/san_kajames" class="social-icon instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <!-- X (formerly Twitter) -->
+                <a href="https://x.com/san_kajames" class="social-icon x-twitter" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div> <!-- FIXED: Closed footer-left properly here -->
+
+        <!-- Middle Side: Quick Links -->
+        <div class="footer-middle">
+            <p><strong>Additional Quick Links:</strong></p>
+            <ul>
+                <li><a href="https://github.com/" target="_blank">My GitHub Profile</a></li>
+                <li><a href="https://linkedin.com/in/sandile-ntekiso" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Side: Map Container -->
+        <div class="footer-right">
+            <div class="map-container">
+                <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.115792610738!2d28.1186711!3d-25.6674395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec0d99aa4e4522f%3A0xa52ebbcaee33b74f!2s933%20Lucas%20Meyer%20St%2C%20Theresapark%2C%20Akasia%2C%200155!5e0!3m2!1sen!2sza!4v1716132000000!5m2!1sen!2sza" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
