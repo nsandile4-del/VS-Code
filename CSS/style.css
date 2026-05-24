@@ -1,0 +1,399 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Enables smooth scrolling between sections as requested */
+    scroll-behavior: smooth; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    background-color: #c9d3db;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Base style for standalone sub-pages */
+.page-content {
+    padding: 40px 20px;
+}
+
+/* ==========================================================================
+   2. NAVIGATION HEADER (Flexbox Layout)
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+  .logo img {
+            max-height: 50px;
+        }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Hover transitions */
+}
+
+/* Interactive navigation link states */
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #1a73e8;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Responsive Media Showcase)
+   ========================================================================== */
+.hero-section {
+    width: 100%;
+    margin-bottom: 40px;
+    border: 1px solid #99cbc6ac;
+    background-color: #cecece;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Keeps videos/images proportional and fully fluid */
+.responsive-media {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   8. PURE CSS SLIDESHOW COMPONENT
+   ========================================================================== */
+.slideshow-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden; /* Hide the images outside the frame */
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px; /* Space out the slideshow from the heading */
+}
+
+.slideshow-wrapper {
+    display: flex;
+    width: 300%; /* Enough width to fit 3 slides horizontally (100% * 3) */
+    height: 400px;
+    /* Links the smooth infinity keyframe animation loop defined below */
+    animation: slideLoop 12s infinite ease-in-out; 
+}
+
+.slide {
+    width: 33.333%; /* Each individual slide takes exactly 1 viewport frame width */
+    position: relative;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps your chosen photos proportional and responsive */
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Timeline logic: holds on a slide, then shifts left to showcase the next */
+@keyframes slideLoop {
+    0%, 25% {
+        transform: translateX(0%); /* Show Slide 1 */
+    }
+    33%, 58% {
+        transform: translateX(-33.333%); /* Show Slide 2 */
+    }
+    66%, 92% {
+        transform: translateX(-66.666%); /* Show Slide 3 */
+    }
+    100% {
+        transform: translateX(0%); /* Reset flawlessly back to Slide 1 */
+    }
+}
+
+/* ==========================================================================
+   4. PROFILE BIOGRAPHY SECTION (Split Layout)
+   ========================================================================== */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.bio-content {
+    flex: 1;
+}
+
+.bio-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #111111;
+}
+
+.bio-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #666666;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Circular constraints for personal image container */
+.profile-image-container {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   5. CONTACT & ABOUT SUB-PAGES COMPONENT STYLES
+   ========================================================================== */
+.about-details h1, .contact-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-details h2 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.about-details ul {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.method {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #155cb4;
+}
+
+
+/* ==========================================================================
+   6. FOOTER COMPONENT
+   ========================================================================== */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+    padding: 40px 20px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-container > div {
+    flex: 1;
+    min-width: 250px;
+}
+
+footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #222222;
+}
+
+footer p {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Interactive circular social platform design anchors */
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #999999;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border-color: #1a73e8;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 2;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #1a73e8;
+}
+
+.footer-map iframe {
+    border-radius: 6px;
+    border: 1px solid #dddddd;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+
+/* Tablet & Smaller Desktop Intercepts */
+@media (max-width: 900px) {
+    .profile-section {
+        flex-direction: column-reverse; /* Reverses sequence to push layout elements symmetrically */
+        text-align: center;
+    }
+    
+    .profile-image-container {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Mobile Viewport Intercepts */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+    
+}
